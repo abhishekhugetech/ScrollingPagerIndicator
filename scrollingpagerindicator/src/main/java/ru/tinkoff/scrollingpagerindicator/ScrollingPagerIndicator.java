@@ -265,6 +265,10 @@ public class ScrollingPagerIndicator extends View {
         attachToPager(recyclerView, new RecyclerViewAttacher());
     }
 
+    public void attachToRecyclerViewCustom(@NonNull RecyclerView recyclerView) {
+        attachToPager(recyclerView, new RecyclerViewAttacherCustom());
+    }
+
     /**
      * Attaches indicator to RecyclerView. Use this method if current page of the recycler isn't centered.
      * All pages must have the same width.

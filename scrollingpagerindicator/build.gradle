@@ -28,4 +28,6 @@ dependencies {
     compileOnly "androidx.viewpager:viewpager:$rootProject.viewPagerVersion"
     compileOnly "androidx.viewpager2:viewpager2:$rootProject.viewPager2Version"
     compileOnly "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+
+    compileOnly 'com.ccy:FocusLayoutManager:1.0.2'
 }
