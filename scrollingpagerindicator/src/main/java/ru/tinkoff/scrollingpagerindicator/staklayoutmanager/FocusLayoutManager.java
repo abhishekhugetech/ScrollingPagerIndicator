@@ -19,7 +19,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
-import ccy.focuslayoutmanager.BuildConfig;
 
 /**
  * Created by ccy(17022) on 2019/5/18 下午5:07
@@ -835,23 +834,23 @@ public class FocusLayoutManager extends RecyclerView.LayoutManager {
         int widthMode = View.MeasureSpec.getMode(widthSpec);
         int heightMode = View.MeasureSpec.getMode(heightSpec);
         if (widthMode == View.MeasureSpec.AT_MOST && (focusOrientation == FOCUS_LEFT || focusOrientation == FOCUS_RIGHT)) {
-            if (BuildConfig.DEBUG) {
-                throw new RuntimeException("FocusLayoutManager-onMeasure:当滚动方向为水平时，recyclerView" +
-                        "的宽度请不要使用wrap_content");
-            } else {
+//            if (BuildConfig.DEBUG) {
+//                throw new RuntimeException("FocusLayoutManager-onMeasure:当滚动方向为水平时，recyclerView" +
+//                        "的宽度请不要使用wrap_content");
+//            } else {
                 Log.e(TAG, "FocusLayoutManager-onMeasure:当滚动方向为水平时，recyclerView" +
                         "的宽度请不要使用wrap_content");
-            }
+//            }
 
         }
         if (heightMode == View.MeasureSpec.AT_MOST && (focusOrientation == FOCUS_TOP || focusOrientation == FOCUS_BOTTOM)) {
-            if (BuildConfig.DEBUG) {
-                throw new RuntimeException("FocusLayoutManager-onMeasure:当滚动方向为垂直时，recyclerView" +
-                        "的高度请不要使用wrap_content");
-            } else {
+//            if (BuildConfig.DEBUG) {
+//                throw new RuntimeException("FocusLayoutManager-onMeasure:当滚动方向为垂直时，recyclerView" +
+//                        "的高度请不要使用wrap_content");
+//            } else {
                 Log.e(TAG, "FocusLayoutManager-onMeasure:当滚动方向为垂直时，recyclerView" +
                         "的高度请不要使用wrap_content");
-            }
+//            }
         }
         super.onMeasure(recycler, state, widthSpec, heightSpec);
     }
