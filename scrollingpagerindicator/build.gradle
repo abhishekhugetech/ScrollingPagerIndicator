@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
-apply from: "$project.rootDir/gradle/publish-lib.gradle"
-
-def customGradleScript = "$project.rootDir/gradle/local.gradle"
-if(new File(customGradleScript).exists()){
-    apply from: customGradleScript
-}
+//apply from: "$project.rootDir/gradle/publish-lib.gradle"
+//
+//def customGradleScript = "$project.rootDir/gradle/local.gradle"
+//if(new File(customGradleScript).exists()){
+//    apply from: customGradleScript
+//}
 
 android {
     compileSdkVersion rootProject.compileSdk
@@ -14,20 +14,23 @@ android {
         targetSdkVersion rootProject.targetSdk
     }
 
-    libraryVariants.all {
-        it.generateBuildConfig.enabled = false
-    }
+//    libraryVariants.all {
+//        it.generateBuildConfig.enabled = false
+//    }
 }
 
-tasks.withType(Javadoc) {
-    options.addStringOption('encoding', 'UTF-8')
-    options.addStringOption('charSet', 'UTF-8')
-}
+//tasks.withType(Javadoc) {
+//    options.addStringOption('encoding', 'UTF-8')
+//    options.addStringOption('charSet', 'UTF-8')
+//}
 
 dependencies {
-    compileOnly "androidx.viewpager:viewpager:$rootProject.viewPagerVersion"
-    compileOnly "androidx.viewpager2:viewpager2:$rootProject.viewPager2Version"
-    compileOnly "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    compileOnly 'com.ccy:FocusLayoutManager:1.0.2'
+    implementation "androidx.viewpager:viewpager:$rootProject.viewPagerVersion"
+    implementation "androidx.viewpager2:viewpager2:$rootProject.viewPager2Version"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
 }
