@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import ccy.focuslayoutmanager.FocusLayoutManager;
+import ru.tinkoff.scrollingpagerindicator.staklayoutmanager.FocusLayoutManager;
 
 /**
  * @author Nikita Olifer
